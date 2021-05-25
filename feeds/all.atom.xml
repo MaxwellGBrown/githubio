@@ -2,4 +2,4 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>MaxwellGBrown</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2021-05-25T00:00:00-05:00</updated><entry><title>Hello Pelican</title><link href="/hello-pelican.html" rel="alternate"></link><published>2021-05-25T00:00:00-05:00</published><updated>2021-05-25T00:00:00-05:00</updated><author><name>Maxwell G Brown</name></author><id>tag:None,2021-05-25:/hello-pelican.html</id><content type="html">&lt;h1&gt;Hello Pelican&lt;/h1&gt;
 &lt;p&gt;This is a markdown file that Pelican turns into blog posts (or something? lets find out).&lt;/p&gt;
 &lt;p&gt;Shamelessly followed &lt;a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python"&gt;this blog post&lt;/a&gt; to see what the result is.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A picture of a pelican" src="picture_of_a_pelican"&gt;&lt;/p&gt;</content><category term="posts"></category></entry></feed>
+&lt;p&gt;&lt;img alt="A picture of a pelican" src="/images/pelican.jpg"&gt;&lt;/p&gt;</content><category term="posts"></category></entry></feed>
