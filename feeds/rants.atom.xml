@@ -94,12 +94,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Read certain fields in said records for URLs of images
-    (The ordered list is doing me a disservice now, since this will likely happen simultaneous to 2, but the show must go on)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Map&lt;/strong&gt; fields with URLs&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Read certain fields in said records for URLs of images&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(The ordered list is doing me a disservice now, since this will likely happen simultaneous to 2, but the show must go on)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;- **Map** fields with URLs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download said images&lt;/p&gt;
 &lt;ul&gt;
