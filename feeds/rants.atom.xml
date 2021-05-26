@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>MaxwellGBrown - rants</title><link href="/" rel="alternate"></link><link href="/feeds/rants.atom.xml" rel="self"></link><id>/</id><updated>2021-05-26T00:00:00-05:00</updated><entry><title>Everything is MapReduce</title><link href="/everything-is-mapreduce.html" rel="alternate"></link><published>2021-05-26T00:00:00-05:00</published><updated>2021-05-26T00:00:00-05:00</updated><author><name>Maxwell G Brown</name></author><id>tag:None,2021-05-26:/everything-is-mapreduce.html</id><summary type="html">&lt;h1&gt;Everything is MapReduce&lt;/h1&gt;
-&lt;p&gt;&lt;a href="/images/mapreduce-everywhere.jpg"&gt;MapReduce. MapReduce everywhere.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="MapReduce. MapReduce everywhere." src="/images/mapreduce-everywhere.jpg"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Product: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"
-(naive) Dev: "Uuh, let's just …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h1&gt;Everything is MapReduce&lt;/h1&gt;
-&lt;p&gt;&lt;a href="/images/mapreduce-everywhere.jpg"&gt;MapReduce. MapReduce everywhere.&lt;/a&gt;&lt;/p&gt;
+(naive) Dev: "Uuh, let's just do it in …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h1&gt;Everything is MapReduce&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="MapReduce. MapReduce everywhere." src="/images/mapreduce-everywhere.jpg"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Product: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"
 (naive) Dev: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"
@@ -84,7 +84,7 @@ PM: "I'll write a ticket to increase the file size!"&lt;/p&gt;
 &lt;p&gt;Did I mention that each of these steps saves the intermediate data, so we can audit between steps? &lt;/p&gt;
 &lt;p&gt;I've built systems similar to this thrice over at my job, and whenever I take a step back to admire my handiwork I end up thinking to myself:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Did I just build a glorified MapReduce?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="/images/rey-mapreduce.jpg"&gt;Who are you? Rey. Rey MapReduce&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Who are you? Rey. Rey MapReduce" src="/images/rey-mapreduce.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;Confession/Disclaimer&lt;/h2&gt;
 &lt;p&gt;I have no idea what I'm talking about. I've never actually used Hadoop before, nor any of the othere "MapReducers" I could find in a 3-minute google sesh (Apache Spark, Apache Storm, BigQuery, Disco).&lt;/p&gt;
 &lt;p&gt;But here I am with the confession that I've ~wasted~ spent plenty of time implementing solutions that would likely fit into the category of "Hadoop Alternative".&lt;/p&gt;
