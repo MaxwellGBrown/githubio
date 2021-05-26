@@ -13,7 +13,6 @@
         <header id="banner" class="body">
                 <h1><a href="/">MaxwellGBrown</a></h1>
                 <nav><ul>
-                    <li><a href="/category/posts.html">posts</a></li>
                     <li class="active"><a href="/category/rants.html">rants</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
@@ -39,10 +38,10 @@
 </footer><!-- /.post-info -->      <h1>Everything is MapReduce</h1>
 <p><img alt="MapReduce. MapReduce everywhere." src="/images/mapreduce-everywhere.jpg"></p>
 <blockquote>
-<p>Product: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"</p>
-<p>(naive) Dev: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"</p>
-<p>QA: "Hey, so the processing form doesn't work for any files larger than 500kb..."</p>
-<p>PM: "I'll write a ticket to increase the file size!"</p>
+<p><strong>Product</strong>: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"</p>
+<p><strong>(naive) Dev</strong>: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"</p>
+<p><strong>QA</strong>: "Hey, so the processing form doesn't work for any files larger than 500kb..."</p>
+<p><strong>PM</strong>: "I'll write a ticket to increase the file size!"</p>
 </blockquote>
 <p>It's not the first time I've had to write a system like the above and it likely won't be the last. And it won't be the first time that a developer (naively, I feel) suggests taking an incremenetal approach to implementing it first in a blocking API call that just <em>does everything</em>. </p>
 <p>Very quickly though the team outgrows these implementations (probably because blocking API calls are a <em>Bad Idea</em>) and then the poor dev (or even worse, his successor!) is stuck with a ticket that says something like "increase import size from 500kb" and they find themselves trying to build Rome with a hammer &amp; chisel.</p>
@@ -70,9 +69,9 @@
 </ol>
 <p>...and maybe to do this we have a workflow manager that manages moving between steps for us! When 1 is done, do 2. When 2 is done do 3. Do I need to do step 4? No? Skip to 5.</p>
 <p>All the while, dropping our intermediate data somewhere so we can both pick it up at the next step or audit it after the fact.</p>
-<h2>In case you haven't noticed yet...</h2>
-<p><strong>This post is about MapReduce now!</strong></p>
+<h3>In case you hadn't noticed...</h3>
 <p><img alt="It's all MapReduce? Always has been." src="/images/mapreduce-always-has-been.jpg"></p>
+<h2>This rant is about MapReduce now!</h2>
 <p>We did all this work just to implement a glorified MapReduce!</p>
 <p>And we <em>haaaate</em> unnecessary work. Why build something custom when you can worry about less and finger-point at other vendors when your stuff isn't working right?</p>
 <p>Here's the hot-take of the day: <strong>All data processing is just glorified MapReduce</strong>.</p>
@@ -80,43 +79,87 @@
 <h2>I don't see it yet</h2>
 <p>It's in the name. MapReduce is two main parts:</p>
 <ol>
-<li><strong>Map</strong> initial data into keys that correspond to how we're processing the data</li>
-<li><strong>Reduce</strong> mapped data into "organized" data that we want to work with</li>
+<li>
+<p><strong>Map</strong> initial data into keys that correspond to how we're processing the data</p>
+</li>
+<li>
+<p><strong>Reduce</strong> mapped data into "organized" data that we want to work with</p>
+</li>
 </ol>
 <p>...and if we want to get into specifics those two actually have other steps to talk about:</p>
 <ol>
-<li><strong>Map</strong></li>
-<li>Input
-     Give the initial input</li>
-<li>Split
-     Split initial data into processable chunks</li>
-<li>Map
-     Take a chunk and key the records you want from it</li>
-<li><strong>Reduce</strong></li>
-<li>Shuffle
-     Across the chunks, organize data into logical groups</li>
-<li>Reduce
-     Turn the logical groups into new data</li>
+<li>
+<p><strong>Map</strong></p>
+</li>
+<li>
+<p>Input</p>
+<p>Give the initial input</p>
+</li>
+<li>
+<p>Split</p>
+<p>Split initial data into processable chunks</p>
+</li>
+<li>
+<p>Map</p>
+<p>Take a chunk and key the records you want from it</p>
+</li>
+<li>
+<p><strong>Reduce</strong></p>
+</li>
+<li>
+<p>Shuffle</p>
+<p>Across the chunks, organize data into logical groups</p>
+</li>
+<li>
+<p>Reduce</p>
+<p>Turn the logical groups into new data</p>
+</li>
 </ol>
 <p>With those enumerated, it's a lot easier to see how our problem statement fits so well into this:</p>
 <ol>
-<li>Turn XLSX rows into JSON data</li>
-<li><strong>Input</strong> XLSX file</li>
-<li><strong>Split</strong> XLSX rows into JSON data</li>
-<li>Read JSON records for an ID to insert/update into our system</li>
-<li><strong>Map</strong> JSON records into keys</li>
-<li><strong>Shuffle</strong> records into separate "Inserts" and "Update" groups</li>
-<li>Read certain fields in said records for URLs of images
-   (The ordered list is doing me a disservice now, since this will likely happen simultaneous to 2, but the show must go on)</li>
-<li><strong>Map</strong> fields with URLs</li>
-<li>Download said images</li>
-<li><strong>Reduce</strong> URLs to new hosted location</li>
-<li>Insert/update database with some light processing/transformed of values (e.g. whitespace trimming)</li>
-<li><strong>Reduce</strong> to new records</li>
+<li>
+<p>Turn XLSX rows into JSON data</p>
+</li>
+<li>
+<p><strong>Input</strong> XLSX file</p>
+</li>
+<li>
+<p><strong>Split</strong> XLSX rows into JSON data</p>
+</li>
+<li>
+<p>Read JSON records for an ID to insert/update into our system</p>
+</li>
+<li>
+<p><strong>Map</strong> JSON records into keys</p>
+</li>
+<li>
+<p><strong>Shuffle</strong> records into separate "Inserts" and "Update" groups</p>
+</li>
+<li>
+<p>Read certain fields in said records for URLs of images</p>
+</li>
 </ol>
+<p>(The ordered list is doing me a disservice now, since this will likely happen simultaneous to 2, but the show must go on)</p>
+<ul>
+<li>
+<p><strong>Map</strong> fields with URLs</p>
+</li>
+<li>
+<p>Download said images</p>
+</li>
+<li>
+<p><strong>Reduce</strong> URLs to new hosted location</p>
+</li>
+<li>
+<p>Insert/update database with some light processing/transformed of values (e.g. whitespace trimming)</p>
+</li>
+<li>
+<p><strong>Reduce</strong> to new records</p>
+</li>
+</ul>
 <p>Did I mention that each of these steps saves the intermediate data, so we can audit between steps? </p>
 <p>I've built systems similar to this thrice over at my job, and whenever I take a step back to admire my handiwork I end up thinking to myself:</p>
-<p><strong>Did I just build a glorified MapReduce?</strong></p>
+<h3>Did I just build a glorified MapReduce?</h3>
 <p><img alt="Who are you? Rey. Rey MapReduce" src="/images/rey-mapreduce.jpg"></p>
 <h2>Confession/Disclaimer</h2>
 <p>I have no idea what I'm talking about. I've never actually used Hadoop before, nor any of the othere "MapReducers" I could find in a 3-minute google sesh (Apache Spark, Apache Storm, BigQuery, Disco).</p>
