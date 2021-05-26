@@ -6,13 +6,13 @@ author: Maxwell G Brown
 
 ![MapReduce. MapReduce everywhere.][mapreduce_everywhere]
 
-> Product: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"
+> **Product**: "It's time to write some data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"
 >
-> (naive) Dev: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"
+> **(naive) Dev**: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"
 >
-> QA: "Hey, so the processing form doesn't work for any files larger than 500kb..."
+> **QA**: "Hey, so the processing form doesn't work for any files larger than 500kb..."
 >
-> PM: "I'll write a ticket to increase the file size!"
+> **PM**: "I'll write a ticket to increase the file size!"
 
 It's not the first time I've had to write a system like the above and it likely won't be the last. And it won't be the first time that a developer (naively, I feel) suggests taking an incremenetal approach to implementing it first in a blocking API call that just _does everything_. 
 
@@ -54,11 +54,11 @@ We've introduced more infrastructure overhead (after all, we _did_ solve this pr
 
 All the while, dropping our intermediate data somewhere so we can both pick it up at the next step or audit it after the fact.
 
-## In case you haven't noticed yet...
-
-**This post is about MapReduce now!**
+### In case you hadn't noticed...
 
 ![It's all MapReduce? Always has been.][mapreduce_always_has_been]
+
+## This rant is about MapReduce now!
 
 We did all this work just to implement a glorified MapReduce!
 
@@ -73,44 +73,51 @@ Why do we even bother building our own things when we have these solutions that 
 It's in the name. MapReduce is two main parts:
 
 1. **Map** initial data into keys that correspond to how we're processing the data
+
 2. **Reduce** mapped data into "organized" data that we want to work with
 
 ...and if we want to get into specifics those two actually have other steps to talk about:
 
 1. **Map**
-   - Input
-     Give the initial input
-   - Split
-     Split initial data into processable chunks
-   - Map
-     Take a chunk and key the records you want from it
+    - Input
+      Give the initial input
+    - Split
+      Split initial data into processable chunks
+    - Map
+      Take a chunk and key the records you want from it
+
 2. **Reduce**
-   - Shuffle
-     Across the chunks, organize data into logical groups
-   - Reduce
-     Turn the logical groups into new data
+    - Shuffle
+      Across the chunks, organize data into logical groups
+    - Reduce
+      Turn the logical groups into new data
 
 With those enumerated, it's a lot easier to see how our problem statement fits so well into this:
 
 1. Turn XLSX rows into JSON data
-   - **Input** XLSX file
-   - **Split** XLSX rows into JSON data
+    - **Input** XLSX file
+    - **Split** XLSX rows into JSON data
+
 2. Read JSON records for an ID to insert/update into our system
-   - **Map** JSON records into keys
-   - **Shuffle** records into separate "Inserts" and "Update" groups
-3. Read certain fields in said records for URLs of images
-   (The ordered list is doing me a disservice now, since this will likely happen simultaneous to 2, but the show must go on)
-   - **Map** fields with URLs
+    - **Map** JSON records into keys
+    - **Shuffle** records into separate "Inserts" and "Update" groups
+
+3. Read certain fields in said records for URLs of images (the ordered list is doing me a disservice now, since this will likely happen simultaneous to 2, but the show must go on)
+
+    - **Map** fields with URLs
+
 4. Download said images
-   - **Reduce** URLs to new hosted location
+    - **Reduce** URLs to new hosted location
+
 5. Insert/update database with some light processing/transformed of values (e.g. whitespace trimming)
-   - **Reduce** to new records
+    - **Reduce** to new records
+
 
 Did I mention that each of these steps saves the intermediate data, so we can audit between steps? 
 
 I've built systems similar to this thrice over at my job, and whenever I take a step back to admire my handiwork I end up thinking to myself:
 
-**Did I just build a glorified MapReduce?**
+### Did I just build a glorified MapReduce?
 
 ![Who are you? Rey. Rey MapReduce][rey_mapreduce]
 
