@@ -39,10 +39,10 @@
 </footer><!-- /.post-info -->      <h1>Everything is MapReduce</h1>
 <p><img alt="MapReduce. MapReduce everywhere." src="/images/mapreduce-everywhere.jpg"></p>
 <blockquote>
-<p>Product: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"
-(naive) Dev: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"
-QA: "Hey, so the processing form doesn't work for any files larger than 500kb..."
-PM: "I'll write a ticket to increase the file size!"</p>
+<p>Product: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"</p>
+<p>(naive) Dev: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"</p>
+<p>QA: "Hey, so the processing form doesn't work for any files larger than 500kb..."</p>
+<p>PM: "I'll write a ticket to increase the file size!"</p>
 </blockquote>
 <p>It's not the first time I've had to write a system like the above and it likely won't be the last. And it won't be the first time that a developer (naively, I feel) suggests taking an incremenetal approach to implementing it first in a blocking API call that just <em>does everything</em>. </p>
 <p>Very quickly though the team outgrows these implementations (probably because blocking API calls are a <em>Bad Idea</em>) and then the poor dev (or even worse, his successor!) is stuck with a ticket that says something like "increase import size from 500kb" and they find themselves trying to build Rome with a hammer &amp; chisel.</p>
