@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>MaxwellGBrown</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2021-05-26T00:00:00-05:00</updated><entry><title>Everything is MapReduce</title><link href="/everything-is-mapreduce.html" rel="alternate"></link><published>2021-05-26T00:00:00-05:00</published><updated>2021-05-26T00:00:00-05:00</updated><author><name>Maxwell G Brown</name></author><id>tag:None,2021-05-26:/everything-is-mapreduce.html</id><summary type="html">&lt;h1&gt;Everything is MapReduce&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="MapReduce. MapReduce everywhere." src="/images/mapreduce-everywhere.jpg"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Product&lt;/strong&gt;: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(naive) Dev&lt;/strong&gt;: "Uuh, let's just do it in …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h1&gt;Everything is MapReduce&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Product&lt;/strong&gt;: "It's time to write some data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(naive) Dev&lt;/strong&gt;: "Uuh, let's just do it in a …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h1&gt;Everything is MapReduce&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="MapReduce. MapReduce everywhere." src="/images/mapreduce-everywhere.jpg"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Product&lt;/strong&gt;: "It's time to write some asynchronous data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Product&lt;/strong&gt;: "It's time to write some data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(naive) Dev&lt;/strong&gt;: "Uuh, let's just do it in a blocking API request in a single procedural function the size of Texas?"&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;QA&lt;/strong&gt;: "Hey, so the processing form doesn't work for any files larger than 500kb..."&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PM&lt;/strong&gt;: "I'll write a ticket to increase the file size!"&lt;/p&gt;
