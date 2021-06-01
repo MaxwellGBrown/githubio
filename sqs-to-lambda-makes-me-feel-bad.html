@@ -3,9 +3,10 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>MaxwellGBrown - rants</title>
+        <title>SQS to Lambda Makes Me Feel Bad</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="MaxwellGBrown Atom Feed" />
+        <meta name="description" content="SQS to Lambda Makes Me Feel Bad (& Misery Loves Company) I myself remember a time (pre mid-2018) when AWS did not support SQS as a Lambda trigger...." />
 </head>
 
 <body id="index" class="home">
@@ -15,10 +16,15 @@
                     <li class="active"><a href="/category/rants.html">rants</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/sqs-to-lambda-makes-me-feel-bad.html" rel="bookmark"
+           title="Permalink to SQS to Lambda Makes Me Feel Bad">SQS to Lambda Makes Me Feel Bad</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/sqs-to-lambda-makes-me-feel-bad.html">SQS to Lambda Makes Me Feel Bad</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2021-05-27T00:00:00-05:00">
                 Published: Thu 27 May 2021
@@ -29,7 +35,7 @@
         </address>
 <p>In <a href="/category/rants.html">rants</a>.</p>
 
-</footer><!-- /.post-info --><h1>SQS to Lambda Makes Me Feel Bad (&amp; Misery Loves Company)</h1>
+</footer><!-- /.post-info -->      <h1>SQS to Lambda Makes Me Feel Bad (&amp; Misery Loves Company)</h1>
 <p>I myself remember a time (pre mid-2018) when AWS did not support SQS as a Lambda trigger. For the life of me I cannot find any recollection of this on the internet--it seems as the deep state has entirely scrubbed the internet of frustrated AWS users asking "why in god's name can't I go from SQS -&gt; Lambda?!?!" (and, I myself used to be one of them).</p>
 <p><img alt="If an item doesn't appear in our records, it doesn't exist" src="/images/not-in-archives.png"></p>
 <p>Today, while searching for this exact case I find nothing but absolute celebration that our lord god AWS itself has delivered upon to us <strong><a href="https://aws.amazon.com/blogs/aws/aws-lambda-adds-amazon-simple-queue-service-to-supported-event-sources/">SQS as a Lambda trigger</a></strong>. <em>He is risen!</em></p>
@@ -75,40 +81,11 @@ If you want to communicate asynchronously with AWS Lambda, <em>why don't you jus
 </ul>
 <p>Queues still serve a purpose: throttling expensive asynchronous operations! But shoe-horning them into being glorified message brokers is doing everybody a disservice, and is something SNS <em>was literally made to do</em>.</p>
 <h2>In Conclusion...</h2>
-<p>If you're using Lambdas as SQS Queue consumers then maybe you're doing it wrong.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>If you're using Lambdas as SQS Queue consumers then maybe you're doing it wrong.</p>
+    </div><!-- /.entry-content -->
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/everything-is-mapreduce.html" rel="bookmark"
-                           title="Permalink to Everything is MapReduce">Everything is MapReduce</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2021-05-26T00:00:00-05:00">
-                Published: Wed 26 May 2021
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/maxwell-g-brown.html">Maxwell G Brown</a>
-        </address>
-<p>In <a href="/category/rants.html">rants</a>.</p>
-
-</footer><!-- /.post-info -->                <h1>Everything is MapReduce</h1>
-<p><img alt="MapReduce. MapReduce everywhere." src="/images/mapreduce-everywhere.jpg"></p>
-<blockquote>
-<p><strong>Product</strong>: "It's time to write some data processing! We have files that may have records in the tens of thousands, and we need to categorize/label/process/onboard them into our system after submission from an HTTP request!"</p>
-<p><strong>(naive) Dev</strong>: "Uuh, let's just do it in a …</p></blockquote>
-                <a class="readmore" href="/everything-is-mapreduce.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
