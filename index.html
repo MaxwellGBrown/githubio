@@ -18,7 +18,67 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/cinnamon-toast-software.html">Cinnamon Toast Software</a></h1>
+                    <h1 class="entry-title"><a href="/rewhy-the-fortune-500-is-just-finally-dumping-hadoop.html">Re:Why The Fortune 500 is (Just) Finally Dumping Hadoop</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2021-06-07T00:00:00-05:00">
+                Published: Mon 07 June 2021
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/maxwell-g-brown.html">Maxwell G Brown</a>
+        </address>
+<p>In <a href="/category/rants.html">rants</a>.</p>
+
+</footer><!-- /.post-info --><h1>Re:Why The Fortune 500 is (Just) Finally Dumping Hadoop</h1>
+<p>After ranting about "<a href="/everything-is-mapreduce.html">Everything being MapReduce</a>" I felt prompted to actually go learn more about MapReduce. Maybe my untrained eye is seeing apples everywhere there's oranges.</p>
+<p>While perusing articles I came across an article suggesting that I'm probably wasting my time (and the title referenced in this rant's title): <strong><a href="https://www.nextplatform.com/2021/02/17/why-the-fortune-500-is-finally-dumping-hadoop/">Why The Fortune 500 is (Just) Finally Dumping Hadoop</a></strong>.</p>
+<p>Ignoring the strangely parenthesized "just" and the suggestion that <a href="https://github.com/MaxwellGBrown/mapreduce_docker_example">the hour or so I spent researching and running Hadoop in docker</a> was a waste of time, I actually saw some things that resonated with me.</p>
+<h2>Maintaining Infrastructure is a PITA</h2>
+<blockquote>
+<p>...many of the world’s largest companies got that memo a few years back, that’s a lot of investment in hardware, tooling, time, and engineers.</p>
+</blockquote>
+<p>The central theme of this piece. With Hadoop you have to maintain (as I understand it) several different types of nodes of which more are added as the scale of the system gets larger.</p>
+<p>When Hadoop was in it's hay-day, that was totally acceptable. Software teams were already constructed to work this way. DevOps wasn't even coined until 2009; you'd have your "infrastructure" team managing your servers (and likely on premisis too!) to work all of that for you.</p>
+<p>The replacement of infrastructure with DevOps teams is a stark contrast of the times. Software teams no longer need infrastructure teams (they're probably employed by the Cloud Providers now!), and instead have a DevOps team/roles </p>
+<h3>I'm not old</h3>
+<p>...granted I wasn't <em>really</em> a developer at this point. This is my understanding of the software development world as I was learning as a student/junior and from secondhand experiences my seniors have shared with me.</p>
+<h2>Cloud Services &gt; Cloud Infrastructure</h2>
+<blockquote>
+<p>Here’s the funny thing about Hadoop in 2021: While cost savings and analytics performance were the two most attractive benefits back in the roaring 2010s, the shine has worn off both features. It doesn’t help that cloud’s silver lining has beckoned to far more companies over that decades—all those big enterprises that were slow to take to AWS or Azure or competitors for security reasons. Now that they’ve made the leap, keeping that on-prem Hadoop gear on the floor and fed with specialized people and tooling looks even less attractive.</p>
+</blockquote>
+<p>Managing your own instances in the cloud might have been kosher in the 2010s, but with managed clouds and cloud services, offloading that responsibility saves software teams a LOT of responsibility and trouble.</p>
+<p>Looking back, Docker and containerization wasn't prevalant then. I don't know this for a fact, but I'd be unsurprised if Hadoop didn't grow to fit into containerization well.</p>
+<h2>On-Demand Compute &gt; Always On</h2>
+<p>...which should seem like a no brainer to anybody working in the 2020s cloud environment.</p>
+<blockquote>
+<p>...Mathur argues. “Having this always-on processing environment with Hadoop and paying for all that compute and storage is an ongoing cost. The amount of data nodes and infrastructure companies still need to pump into their data lakes what is often useless data is just not a scalable model.”</p>
+</blockquote>
+<p>What this screams to me is scaling issues. My impression here is that, yes you can scale hadoop horizontally, but it <em>probably</em> (again, I'm no SME here) is harder than it should be. My (uneducated) guess is that since Hadoop requires dedicated nodes it actually depends on the CPUs &amp; memory of the server.</p>
+<p>I can't see that fitting into the Cloud Service world really well.</p>
+<h2>The rest of the article is about turning tankers</h2>
+<blockquote>
+<p>If something works, even if it’s not the best or cheapest option, it’s not just about existing investment, it’s about the hassle and risk of change. For companies with tens of petabytes wrapped up in such a long-term investment, this is no joke. It’s a huge undertaking and if not managed properly it can create many days of downtime.</p>
+<p>For the largest companies, it’s not practical to take the traditional consulting approach of going to individual business units to find out what data matters and to whom.</p>
+<p>Although we like to think that the largest companies are the most innovative, for many in insurance, banking, healthcare, brick and mortar retail, and travel (to name a few) this is often not the case. Change comes slow because production IT environments are the engines of business. It takes those engines grinding to a halt or halting that production to spur new thinking—and this shift from Hadoop is only just now gathering steam among these giants.</p>
+</blockquote>
+<p>Which I think is a point for smaller focused software teams embedded in their business units, which sounds super agile and fits more neatly into today's software environment. Infrastructure (cloud services?) can be maintained by a single DevOps seat, or maybe a team that loans out time to several smaller groups.</p>
+<h2>Is Hadoop &amp; MapReduce Worth It?</h2>
+<p>Okay, so maybe Hadoop isn't something worth dumping <em>all</em> of my time into learning (but learning a little more about it can't be harmful).</p>
+<p>But this article leaves me stranded about MapReduce being <strong>a Good Thing</strong>. I get the feeling that many of the systems I find myself building are some form of MapReduce. Yet, Hadoop and MapReduce is on the way out.</p>
+<p>So, maybe I'll leave my example as a "Hello World" while I continue to rebuild MapReduce over and over, until I find a better plug-and-play MapReduce alternative.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/cinnamon-toast-software.html" rel="bookmark"
+                           title="Permalink to Cinnamon Toast Software">Cinnamon Toast Software</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2021-06-02T00:00:00-05:00">
                 Published: Wed 02 June 2021
@@ -29,56 +89,12 @@
         </address>
 <p>In <a href="/category/rants.html">rants</a>.</p>
 
-</footer><!-- /.post-info --><h1>Cinnamon Toast Software (aka "The Box Sells The Cereal")</h1>
+</footer><!-- /.post-info -->                <h1>Cinnamon Toast Software (aka "The Box Sells The Cereal")</h1>
 <p>I've had the fortune of working at a "software" company for the last few years.</p>
-<p>For some time I felt (maybe naively) that I was working for a <strong>software</strong> company. And I really enjoyed working for a <strong>software</strong> company! The job I held previously was as an internal swiss-army-knife for a <em>market research</em> company whom I made several small internal apps for, rarely with enough users to count on one hand.</p>
-<p>I switched roles so that I could learn more about the world of <strong>software</strong> and to hone my craft from others who had maturing and developed skillsets.</p>
-<p>For some time, that's exactly what happened too!</p>
-<h2>The Facade</h2>
-<p><img alt="The man behind the curtain" src="/images/man-behind-curtain.gif"></p>
-<p>After settling into the role and company I began to see some patterns that I wasn't familiar with after my time working to solve problems internally at a <em>market research</em> company:</p>
-<ul>
-<li>Deadlines being set often before the details of the project (or, even the product!) were defined</li>
-<li>Functionality and feature sets defined and delivered to the development team with little-to-no input from a developer</li>
-<li>Absolute stonewalling of any red flags and fire alarms raised by the development team</li>
-</ul>
-<p>The direct focus was to have "something" that we can have users on, as long as that "something" was exactly the full product, the "finished" design requested by those in charge.</p>
-<h3>Iterative vs Incremental (vs Both?)</h3>
-<p>Quick aside, this is a case study for the type of environment that breeds an "Itera-mental" (Iterative + Incremental) environment. That is to say, the negatives of developing both Incremental and Iterative while only gaining the positives of Incremental development.</p>
-<p><img alt="Iterative vs Incremental vs On Time &amp; On Budget" src="/images/iterative-incremental.png"></p>
-<p>The dynamic here being grossly misundderstanding both the software development cycle and the definition of an MVP.</p>
-<p>Business people get so attached to the idea of a fully fleshed out product that they accept nothing less than that. They cannot grasp the concept that "quality" in the triple-constraint (or scope, if you're into the sex-tuple constraint thing) has a negative impact on "time", and that <a href="https://pm.stackexchange.com/questions/17069/what-does-it-mean-to-crash-a-project">crashing</a> a software project produces the <em>opposite</em> outcome (I could write a whole rant on this topic, but I feel like there's plenty of other people who have said it already).</p>
-<p>Regardless of whether product functionality is delivered in an Iterative or Incremental fashion, <em>development is always incremental</em>. Even in developing a full "increment" a development team will work to the minimal functional implementation of a feature. </p>
-<p>We can spend 4 months of our 8 month timeline (lol btw at expanding scope constraint with a locked time constraint) building the administration &amp; user management, but that leaves us half of our time to build the actual product for the users are going to pay for!</p>
-<p>...I digress.</p>
-<h2>Wasn't this about cereal or something?</h2>
-<p><img alt="Cereal Meme part 1" src="/images/cereal-meme-1.jpg"></p>
-<p>The Rock Family of Companies (collection of companies under Rock Holdings which includes Rocket Mortgage, previously known as Quicken Loans) has a set of <strong>ISMs</strong>-- <a href="https://www.quickenloans.com/blog/living-the-isms">a set of idioms that drive the company culture</a>.</p>
-<p>The unveiling of the newest ISM (which is not a regular occurrance) while I worked in the family really clarified exactly the culture problem that I was experiencing. I'm pretty sure they're copyrighted or proprietary or something, so I'll paraphrase it:</p>
-<blockquote>
-<p><strong>The box sells the cereal</strong></p>
-</blockquote>
-<p>My initial reactions aside (sometimes they feel like horoscopes that you can uniformly apply to any walk of life), my realization is that this statement is validation for every MBA, big-wig, and marketer: "It doesn't matter what you make, it matters how you present it!"</p>
-<p>Which entirely sums up my experience working at a "software" company. <em>Even if they thought they were</em>, at no point were the decision makers invested in actually creating quality software. I actually cannot stress that enough--I feel like I should write it a second time.</p>
-<p><strong><em>Even if they thought they were</em>, at no point were the decision makers invested in actually creating quality software</strong>.</p>
-<p>For them, it amounted to a marketing exercise: "With what vapid promises are we able to capture what segments of the market?" and connecting with other C-titles to make promises-of-promises. "What do you need from a software? Oh <em>we</em> can add that feature!" (to twenty different companies, while the product has not even been deployed to a production environment!)</p>
-<h3>The cereal is a lie</h3>
-<p>So, if the box sells the cereal, does it even matter what the cereal is?</p>
-<p>Of course it does.</p>
-<p>Remember "<a href="https://twitter.com/JensenKarp/status/1374051365417230336?s=20">Cinnamon Toast Shrimp</a>"?</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ummmm <a href="https://twitter.com/CTCSquares?ref_src=twsrc%5Etfw">@CTCSquares</a> - why are there shrimp tails in my cereal? (This is not a bit) <a href="https://t.co/tTjiAdrnVp">pic.twitter.com/tTjiAdrnVp</a></p>&mdash; Jensen Karp (@JensenKarp) <a href="https://twitter.com/JensenKarp/status/1374051365417230336?ref_src=twsrc%5Etfw">March 22, 2021</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<h2>In conclusion...</h2>
-<p>Let's not develop Cinnamon Toast Software.</p>
-<p><img alt="Cinnamon Toast Crunch: Oops, All Shrimp Tails!" src="/images/oops-all-shrimp-tails.jpg"></p>
-<h3>Disclaimer: Rock FoC &amp; ISMs</h3>
-<p>At this point, I have only worked at a single of the (many) companies in the Rock Family fo Companies. I don't intend to for this to be a criticism or negative review of them (including the one I worked for), or the ISMs as a driver of corporate culture. In fact, I actually like them quite a bit (even if they're a bit Kool-Aid-y).</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>For some time I felt (maybe naively) that I was working for a <strong>software</strong> company. And I really enjoyed working for a <strong>software</strong> company! The job …</p>
+                <a class="readmore" href="/cinnamon-toast-software.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
