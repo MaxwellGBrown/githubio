@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>MaxwellGBrown</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2021-06-16T00:00:00-05:00</updated><entry><title>Faustian Tech Debt</title><link href="/faustian-tech-debt.html" rel="alternate"></link><published>2021-06-16T00:00:00-05:00</published><updated>2021-06-16T00:00:00-05:00</updated><author><name>Maxwell G Brown</name></author><id>tag:None,2021-06-16:/faustian-tech-debt.html</id><summary type="html">&lt;h1&gt;Faustian Tech Debt&lt;/h1&gt;
 &lt;p&gt;Many of the failed software projects I've worked on cemented it's downard trajectory with the same well-intentioned trade off: &lt;em&gt;"If we just stop doing &lt;em&gt;X&lt;/em&gt; then we'll be able to get this through!"&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Let me name a few from experience:
-- Merge code without review
-- Skip writing tests …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Faustian Tech Debt&lt;/h1&gt;
+&lt;p&gt;Let me name a few from experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Merge code without review&lt;/li&gt;
+&lt;li&gt;Skip writing tests …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;Faustian Tech Debt&lt;/h1&gt;
 &lt;p&gt;Many of the failed software projects I've worked on cemented it's downard trajectory with the same well-intentioned trade off: &lt;em&gt;"If we just stop doing &lt;em&gt;X&lt;/em&gt; then we'll be able to get this through!"&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Let me name a few from experience:
-- Merge code without review
-- Skip writing tests
-- Disable checks in the CI so it'll pass
-- Push right to develop
-- ...I'm sure there are more&lt;/p&gt;
+&lt;p&gt;Let me name a few from experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Merge code without review&lt;/li&gt;
+&lt;li&gt;Skip writing tests&lt;/li&gt;
+&lt;li&gt;Disable checks in the CI so it'll pass&lt;/li&gt;
+&lt;li&gt;Push right to develop&lt;/li&gt;
+&lt;li&gt;...I'm sure there are more&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;All of the above share the same intention: &lt;em&gt;temporarily&lt;/em&gt; remove some of the overhead so that developers can deliver features in a more timely fashion.&lt;/p&gt;
 &lt;p&gt;The problem is not with intention (we all love Code Review &amp;amp; Testing (right?!)). The problem is with reality. &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;This is faustian tech debt.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Devil playing guitar" src="devil_0"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Devil playing guitar" src="/images/devil-0.gif"&gt;&lt;/p&gt;
 &lt;p&gt;"Don't you think that's an exaggeration? We can always come back and re-address it!"&lt;/p&gt;
 &lt;p&gt;I meant what I said; the "debt" we now owe our soul to the devil. &lt;/p&gt;
 &lt;p&gt;In my experience there is no returning from this point. Once the proper practices have been eschewed to hit a deadline for a release, you have reached the point of no return.&lt;/p&gt;
 &lt;p&gt;I've even seen disciplined teams fail to recover from this: "If we write a ticket to address what we've just undone, then we can plan on readdressing it!"&lt;/p&gt;
 &lt;p&gt;No, in reality that ticket will be forever be deprioritized and you can stare at it loggingly after you scroll to the bottom of the backlog: "Oh man, I wish we had never sold our souls to the devil".&lt;/p&gt;
-&lt;p&gt;&lt;img alt="The Devil" src="devil_1"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="The Devil" src="/images/devil-1.gif"&gt;&lt;/p&gt;
 &lt;h2&gt;The Agile Manifesto Denounces the Devil!&lt;/h2&gt;
 &lt;p&gt;Nothing in the Agile Manifesto mentions timelines and project management, but it &lt;em&gt;does&lt;/em&gt; advocate for continuous delivery. And not just in one of the principles, but in several!&lt;/p&gt;
 &lt;blockquote&gt;
@@ -33,10 +36,12 @@
 &lt;h3&gt;Short aside on project management fallacies&lt;/h3&gt;
 &lt;p&gt;I've worked on plenty of projects that completely eschew this though: "We want it on this date, we want exactly these features, and we won't touch resourcing."&lt;/p&gt;
 &lt;p&gt;To anybody with a working knowledge of project management, what they just heard was "I want it cheap, fast, and I want it all." which is a complete violation of the Triple Constraint philosophy.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Triple Constraint" src="triple_constraint"&gt;&lt;/p&gt;
-&lt;p&gt;Ineviably, what happens in the end is that something gives:
-- The scope is less than promised (which leads to &lt;em&gt;another&lt;/em&gt; cycle of "get these other features NOW!")
-- The release date gets pushed back (and you already sold yourself short! Why'd we sacrifice our process again?)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Triple Constraint" src="/images/triple-constraint.png"&gt;&lt;/p&gt;
+&lt;p&gt;Ineviably, what happens in the end is that something gives:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The scope is less than promised (which leads to &lt;em&gt;another&lt;/em&gt; cycle of "get these other features NOW!")&lt;/li&gt;
+&lt;li&gt;The release date gets pushed back (and you already sold yourself short! Why'd we sacrifice our process again?)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;and regardless of what gives, everybody walks away embarrassed.&lt;/p&gt;
 &lt;p&gt;I posit that nobody properly practicing agile would find thmselves in this scenario.&lt;/p&gt;
 &lt;h2&gt;In Conclusion...&lt;/h2&gt;

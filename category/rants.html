@@ -31,22 +31,24 @@
 
 </footer><!-- /.post-info --><h1>Faustian Tech Debt</h1>
 <p>Many of the failed software projects I've worked on cemented it's downard trajectory with the same well-intentioned trade off: <em>"If we just stop doing <em>X</em> then we'll be able to get this through!"</em></p>
-<p>Let me name a few from experience:
-- Merge code without review
-- Skip writing tests
-- Disable checks in the CI so it'll pass
-- Push right to develop
-- ...I'm sure there are more</p>
+<p>Let me name a few from experience:</p>
+<ul>
+<li>Merge code without review</li>
+<li>Skip writing tests</li>
+<li>Disable checks in the CI so it'll pass</li>
+<li>Push right to develop</li>
+<li>...I'm sure there are more</li>
+</ul>
 <p>All of the above share the same intention: <em>temporarily</em> remove some of the overhead so that developers can deliver features in a more timely fashion.</p>
 <p>The problem is not with intention (we all love Code Review &amp; Testing (right?!)). The problem is with reality. </p>
 <p><strong>This is faustian tech debt.</strong></p>
-<p><img alt="Devil playing guitar" src="devil_0"></p>
+<p><img alt="Devil playing guitar" src="/images/devil-0.gif"></p>
 <p>"Don't you think that's an exaggeration? We can always come back and re-address it!"</p>
 <p>I meant what I said; the "debt" we now owe our soul to the devil. </p>
 <p>In my experience there is no returning from this point. Once the proper practices have been eschewed to hit a deadline for a release, you have reached the point of no return.</p>
 <p>I've even seen disciplined teams fail to recover from this: "If we write a ticket to address what we've just undone, then we can plan on readdressing it!"</p>
 <p>No, in reality that ticket will be forever be deprioritized and you can stare at it loggingly after you scroll to the bottom of the backlog: "Oh man, I wish we had never sold our souls to the devil".</p>
-<p><img alt="The Devil" src="devil_1"></p>
+<p><img alt="The Devil" src="/images/devil-1.gif"></p>
 <h2>The Agile Manifesto Denounces the Devil!</h2>
 <p>Nothing in the Agile Manifesto mentions timelines and project management, but it <em>does</em> advocate for continuous delivery. And not just in one of the principles, but in several!</p>
 <blockquote>
@@ -59,10 +61,12 @@
 <h3>Short aside on project management fallacies</h3>
 <p>I've worked on plenty of projects that completely eschew this though: "We want it on this date, we want exactly these features, and we won't touch resourcing."</p>
 <p>To anybody with a working knowledge of project management, what they just heard was "I want it cheap, fast, and I want it all." which is a complete violation of the Triple Constraint philosophy.</p>
-<p><img alt="Triple Constraint" src="triple_constraint"></p>
-<p>Ineviably, what happens in the end is that something gives:
-- The scope is less than promised (which leads to <em>another</em> cycle of "get these other features NOW!")
-- The release date gets pushed back (and you already sold yourself short! Why'd we sacrifice our process again?)</p>
+<p><img alt="Triple Constraint" src="/images/triple-constraint.png"></p>
+<p>Ineviably, what happens in the end is that something gives:</p>
+<ul>
+<li>The scope is less than promised (which leads to <em>another</em> cycle of "get these other features NOW!")</li>
+<li>The release date gets pushed back (and you already sold yourself short! Why'd we sacrifice our process again?)</li>
+</ul>
 <p>and regardless of what gives, everybody walks away embarrassed.</p>
 <p>I posit that nobody properly practicing agile would find thmselves in this scenario.</p>
 <h2>In Conclusion...</h2>
