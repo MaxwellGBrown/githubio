@@ -18,7 +18,68 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/rewhy-the-fortune-500-is-just-finally-dumping-hadoop.html">Re:Why The Fortune 500 is (Just) Finally Dumping Hadoop</a></h1>
+                    <h1 class="entry-title"><a href="/faustian-tech-debt.html">Faustian Tech Debt</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2021-06-16T00:00:00-05:00">
+                Published: Wed 16 June 2021
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/maxwell-g-brown.html">Maxwell G Brown</a>
+        </address>
+<p>In <a href="/category/rants.html">rants</a>.</p>
+
+</footer><!-- /.post-info --><h1>Faustian Tech Debt</h1>
+<p>Many of the failed software projects I've worked on cemented it's downard trajectory with the same well-intentioned trade off: <em>"If we just stop doing <em>X</em> then we'll be able to get this through!"</em></p>
+<p>Let me name a few from experience:
+- Merge code without review
+- Skip writing tests
+- Disable checks in the CI so it'll pass
+- Push right to develop
+- ...I'm sure there are more</p>
+<p>All of the above share the same intention: <em>temporarily</em> remove some of the overhead so that developers can deliver features in a more timely fashion.</p>
+<p>The problem is not with intention (we all love Code Review &amp; Testing (right?!)). The problem is with reality. </p>
+<p><strong>This is faustian tech debt.</strong></p>
+<p><img alt="Devil playing guitar" src="devil_0"></p>
+<p>"Don't you think that's an exaggeration? We can always come back and re-address it!"</p>
+<p>I meant what I said; the "debt" we now owe our soul to the devil. </p>
+<p>In my experience there is no returning from this point. Once the proper practices have been eschewed to hit a deadline for a release, you have reached the point of no return.</p>
+<p>I've even seen disciplined teams fail to recover from this: "If we write a ticket to address what we've just undone, then we can plan on readdressing it!"</p>
+<p>No, in reality that ticket will be forever be deprioritized and you can stare at it loggingly after you scroll to the bottom of the backlog: "Oh man, I wish we had never sold our souls to the devil".</p>
+<p><img alt="The Devil" src="devil_1"></p>
+<h2>The Agile Manifesto Denounces the Devil!</h2>
+<p>Nothing in the Agile Manifesto mentions timelines and project management, but it <em>does</em> advocate for continuous delivery. And not just in one of the principles, but in several!</p>
+<blockquote>
+<p>Our highest priority is to satisfy the customer through early and <strong>continuous delivery</strong> of valuable software.</p>
+<p>Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.</p>
+<p>Agile processes promote sustainable development.  The sponsors, developers, and users should be able to maintain a constant pace indefinitely.</p>
+<p>Continuous attention to technical excellence and good design enhances agility.</p>
+</blockquote>
+<p>I'll keep my point brief and simple: <em>if at any point you consider shortcutting your development process then you are <em>not</em> properly practicing agile development</em>.</p>
+<h3>Short aside on project management fallacies</h3>
+<p>I've worked on plenty of projects that completely eschew this though: "We want it on this date, we want exactly these features, and we won't touch resourcing."</p>
+<p>To anybody with a working knowledge of project management, what they just heard was "I want it cheap, fast, and I want it all." which is a complete violation of the Triple Constraint philosophy.</p>
+<p><img alt="Triple Constraint" src="triple_constraint"></p>
+<p>Ineviably, what happens in the end is that something gives:
+- The scope is less than promised (which leads to <em>another</em> cycle of "get these other features NOW!")
+- The release date gets pushed back (and you already sold yourself short! Why'd we sacrifice our process again?)</p>
+<p>and regardless of what gives, everybody walks away embarrassed.</p>
+<p>I posit that nobody properly practicing agile would find thmselves in this scenario.</p>
+<h2>In Conclusion...</h2>
+<p>Don't destroy your process just to meet a deadline. Instad destroy the system which set a deadline that you cannot met without destroying your processes.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/rewhy-the-fortune-500-is-just-finally-dumping-hadoop.html" rel="bookmark"
+                           title="Permalink to Re:Why The Fortune 500 is (Just) Finally Dumping Hadoop">Re:Why The Fortune 500 is (Just) Finally Dumping Hadoop</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2021-06-07T00:00:00-05:00">
                 Published: Mon 07 June 2021
@@ -29,48 +90,12 @@
         </address>
 <p>In <a href="/category/rants.html">rants</a>.</p>
 
-</footer><!-- /.post-info --><h1>Re:Why The Fortune 500 is (Just) Finally Dumping Hadoop</h1>
+</footer><!-- /.post-info -->                <h1>Re:Why The Fortune 500 is (Just) Finally Dumping Hadoop</h1>
 <p>After ranting about "<a href="/everything-is-mapreduce.html">Everything being MapReduce</a>" I felt prompted to actually go learn more about MapReduce. Maybe my untrained eye is seeing apples everywhere there's oranges.</p>
-<p>While perusing articles I came across an article suggesting that I'm probably wasting my time (and the title referenced in this rant's title): <strong><a href="https://www.nextplatform.com/2021/02/17/why-the-fortune-500-is-finally-dumping-hadoop/">Why The Fortune 500 is (Just) Finally Dumping Hadoop</a></strong>.</p>
-<p>Ignoring the strangely parenthesized "just" and the suggestion that <a href="https://github.com/MaxwellGBrown/mapreduce_docker_example">the hour or so I spent researching and running Hadoop in docker</a> was a waste of time, I actually saw some things that resonated with me.</p>
-<h2>Maintaining Infrastructure is a PITA</h2>
-<blockquote>
-<p>...many of the world’s largest companies got that memo a few years back, that’s a lot of investment in hardware, tooling, time, and engineers.</p>
-</blockquote>
-<p>The central theme of this piece. With Hadoop you have to maintain (as I understand it) several different types of nodes of which more are added as the scale of the system gets larger.</p>
-<p>When Hadoop was in it's hay-day, that was totally acceptable. Software teams were already constructed to work this way. DevOps wasn't even coined until 2009; you'd have your "infrastructure" team managing your servers (and likely on premisis too!) to work all of that for you.</p>
-<p>The replacement of infrastructure with DevOps teams is a stark contrast of the times. Software teams no longer need infrastructure teams (they're probably employed by the Cloud Providers now!), and instead have a DevOps team/roles </p>
-<h3>I'm not old</h3>
-<p>...granted I wasn't <em>really</em> a developer at this point. This is my understanding of the software development world as I was learning as a student/junior and from secondhand experiences my seniors have shared with me.</p>
-<h2>Cloud Services &gt; Cloud Infrastructure</h2>
-<blockquote>
-<p>Here’s the funny thing about Hadoop in 2021: While cost savings and analytics performance were the two most attractive benefits back in the roaring 2010s, the shine has worn off both features. It doesn’t help that cloud’s silver lining has beckoned to far more companies over that decades—all those big enterprises that were slow to take to AWS or Azure or competitors for security reasons. Now that they’ve made the leap, keeping that on-prem Hadoop gear on the floor and fed with specialized people and tooling looks even less attractive.</p>
-</blockquote>
-<p>Managing your own instances in the cloud might have been kosher in the 2010s, but with managed clouds and cloud services, offloading that responsibility saves software teams a LOT of responsibility and trouble.</p>
-<p>Looking back, Docker and containerization wasn't prevalant then. I don't know this for a fact, but I'd be unsurprised if Hadoop didn't grow to fit into containerization well.</p>
-<h2>On-Demand Compute &gt; Always On</h2>
-<p>...which should seem like a no brainer to anybody working in the 2020s cloud environment.</p>
-<blockquote>
-<p>...Mathur argues. “Having this always-on processing environment with Hadoop and paying for all that compute and storage is an ongoing cost. The amount of data nodes and infrastructure companies still need to pump into their data lakes what is often useless data is just not a scalable model.”</p>
-</blockquote>
-<p>What this screams to me is scaling issues. My impression here is that, yes you can scale hadoop horizontally, but it <em>probably</em> (again, I'm no SME here) is harder than it should be. My (uneducated) guess is that since Hadoop requires dedicated nodes it actually depends on the CPUs &amp; memory of the server.</p>
-<p>I can't see that fitting into the Cloud Service world really well.</p>
-<h2>The rest of the article is about turning tankers</h2>
-<blockquote>
-<p>If something works, even if it’s not the best or cheapest option, it’s not just about existing investment, it’s about the hassle and risk of change. For companies with tens of petabytes wrapped up in such a long-term investment, this is no joke. It’s a huge undertaking and if not managed properly it can create many days of downtime.</p>
-<p>For the largest companies, it’s not practical to take the traditional consulting approach of going to individual business units to find out what data matters and to whom.</p>
-<p>Although we like to think that the largest companies are the most innovative, for many in insurance, banking, healthcare, brick and mortar retail, and travel (to name a few) this is often not the case. Change comes slow because production IT environments are the engines of business. It takes those engines grinding to a halt or halting that production to spur new thinking—and this shift from Hadoop is only just now gathering steam among these giants.</p>
-</blockquote>
-<p>Which I think is a point for smaller focused software teams embedded in their business units, which sounds super agile and fits more neatly into today's software environment. Infrastructure (cloud services?) can be maintained by a single DevOps seat, or maybe a team that loans out time to several smaller groups.</p>
-<h2>Is Hadoop &amp; MapReduce Worth It?</h2>
-<p>Okay, so maybe Hadoop isn't something worth dumping <em>all</em> of my time into learning (but learning a little more about it can't be harmful).</p>
-<p>But this article leaves me stranded about MapReduce being <strong>a Good Thing</strong>. I get the feeling that many of the systems I find myself building are some form of MapReduce. Yet, Hadoop and MapReduce is on the way out.</p>
-<p>So, maybe I'll leave my example as a "Hello World" while I continue to rebuild MapReduce over and over, until I find a better plug-and-play MapReduce alternative.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>While perusing articles I came across an article suggesting that I'm probably wasting my …</p>
+                <a class="readmore" href="/rewhy-the-fortune-500-is-just-finally-dumping-hadoop.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
